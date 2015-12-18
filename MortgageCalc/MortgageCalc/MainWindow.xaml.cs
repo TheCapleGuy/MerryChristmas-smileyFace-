@@ -20,9 +20,27 @@ namespace MortgageCalc
     /// </summary>
     public partial class MainWindow : Window
     {
+        CalcManager cManager = new CalcManager();
+        //string[] 
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void outputMortgage_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void MortgageEnterInput(object sender, TextChangedEventArgs e)
+        {
+
+            cManager.firstEmpty = false;
+        }
+
+        private void Button_Equals(object sender, RoutedEventArgs e)
+        {
+            cManager.allOutputMortgageValues.Insert(0, cManager.allInputValues[1]);
         }
     }
 }
